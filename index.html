@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/tailwind.css">
+        <title>Web development | Earthcorp</title>
+    </head>
+    <body>
+        <div class="sm:m-6 space-y-6">
+            <div class="theme-swess relative bg-skin-fill max-w-4xl mx-auto overflow-hidden sm:rounded-2xl">
+                <img class="absolute inset-0 h-full w-full object-cover opacity-60" src="img/learn-img.jpg" alt="Banner">
+                <div class="absolute inset-0 bg-gradient-to-br from-skin-hue via-skin-hue to-transparent opacity-90"></div>
+                <div class="relative max-w-2xl mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
+                    <h2 class="text-3xl font-extrabold text-skin-base sm:text-4xl">
+                        <a href="#"><img class="mx-auto mb-3 h-auto max-w-sm" src="/img/logo.svg" alt="Earthcorp"></a>
+                        <span class="block"></span>
+                        <span class="block">We design and develop digital solutions.</span>
+                    </h2>
+                    <p class="mt-4 text-lg leading-6 text-skin-muted">We are a passionate, results-oriented digital marketing team based in India. We provide end-to-end website design, development and digital marketing solutions that focus on the goals and objectives of the customer, from strategy and design to internet marketing. Our team of experts provide success to the client on each project assigned. We support you in exceeding your expectations.</p>
+                    <div class="mt-10 max-2-sm mx-auto sm:max-w-none sm:flex sm:justify-center">
+                        <div class="space-y-4 sm:space-y-0 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5">
+                            <a href="#" class="text-skin-inverted bg-skin-button-accent hover:bg-skin-button-accent-hover flex items-center justify-center px-4 py-3 border border-transparent text-base font-semibold rounded-md shadow-sm sm:px-8"> Get started </a>
+                            <a href="#" class="text-skin-base bg-skin-button-muted flex items-center justify-center px-4 py-3 border border-transparent text-base font-semibold rounded-md shadow-sm bg-opacity-60 hover:bg-opacity-70 sm:px-8" id="Switch" onclick="toggleTheme()"> Live demo </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // function to set a given theme/color-scheme
+            function setTheme(themeName) {
+                localStorage.setItem('theme', themeName);
+                document.documentElement.className = themeName;
+            }
+            // function to toggle between light and dark theme
+            function toggleTheme() {
+            if (localStorage.getItem('theme') === ''){
+                setTheme('theme-swiss');
+            } else {
+                setTheme('');
+            }
+            }
+            // Immediately invoked function to set the theme on initial load
+            (function () {
+            if (localStorage.getItem('theme') === '') {
+                setTheme('');
+            } else {
+                setTheme('theme-swiss');
+            }
+            })();
+        </script>
+
+    </body>
+</html>
